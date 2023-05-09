@@ -1,0 +1,88 @@
+<%- include('./partials/header')%>
+
+    <div class="conns ">
+        <h3 class="go ">
+            Profile information
+        </h3>
+        <section class="leftt">
+
+            <div class="nav-left">
+
+
+                <div class="vlog">
+                    <div class="tec">
+                        <img style="object-fit: cover" class="rounded-circle profilePic" height="150px" width="150px"
+                            src="/images/<%= user.avatar%>" alt="" />
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                            <input class="d-none uploadImg" name="avatar" type="file" />
+                            <button class=" cnn">Upload Image</button>
+                        </form>
+                    </div>
+                    <div>
+                        <h1 class="htt">
+                            <%= user.username%>
+                        </h1>
+                        <h4 class="hos">
+                            <%= user.email%>
+                        </h4>
+                        <p>
+                            <small class=" true text-muted">
+                                <a class="text-decoration-none text-dark fs-3" href="<%= user.links.linkedin%>"><i
+                                        class="ri-linkedin-box-fill"></i></a>
+
+                                <a class="text-decoration-none text-dark fs-3 ms-3" href="<%= user.links.github%>"><i
+                                        class="ri-github-fill"></i></a>
+
+                                <a class="text-decoration-none text-dark fs-3 ms-3" href="<%= user.links.behance%>"><i
+                                        class="ri-behance-fill"></i></a>
+
+                                <div class=" rose">
+                                    <a class="jk" href="/signout">Sign Out</a><br><br>
+                                    <a class="jk" href="/reset-password">Reset Password</a>
+                                </div>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="nav-right">
+
+
+                <form action="/update/<%= user._id%>" method="POST">
+                    <h1 class="text-primary">Persnol information</h1>
+                    <input class=" tell form-control mt-3 w-75" type="text" placeholder="username" name="username"
+                        value="<%= user.username%>" />
+                    <input class=" tel form-control mt-3  w-75" type="email" placeholder="email" name="email"
+                        value="<%= user.email%>" />
+
+                    <input class="tel  form-control mt-3 w-75" type="text" placeholder="contact" name="contact"
+                        value="<%= user.contact%>" />
+
+                    <label class=" tel text-primary fs-3" for="">Links</label>
+                    <input class=" tel  form-control mt-3 w-75" type="url" placeholder="https://linkedin.com"
+                        name="linkedin" value="<%= user.links.linkedin%>" />
+                    <input class=" tel  form-control mt-3 w-75" type="url" placeholder="https://github.com"
+                        name="github" value="<%= user.links.github%>" />
+                    <input class="tel  form-control mt-3 w-75" type="url" placeholder="https://behance.com"
+                        name="behance" value="<%= user.links.behance%>" />
+
+                    <button class=" tel  mt-3 btn btn-success">Update User Information</button>
+                </form>
+            </div>
+    </div>
+    </section>
+
+    <script>
+        const profilePic = document.querySelector(".profilePic");
+        const uploadImg = document.querySelector(".uploadImg");
+        profilePic.addEventListener("click", () => {
+            console.log("hello");
+            uploadImg.click();
+        });
+    </script>
+
+    <%- include('./partials/footer')%>

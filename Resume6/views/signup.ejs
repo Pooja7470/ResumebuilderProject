@@ -1,0 +1,17 @@
+<%- include('./partials/header')%>
+    <div class="container ">
+        <h3 class="fw-primary fs-4 alert text-primary fw-bold text-bg-white ;
+        w-50">
+           Signup
+        </h3>
+        <form action="/signup" method="POST">
+            <input class="mb-3 form-control w-75 ms-5 " type="text" placeholder="username" name="username" />
+            <input class="mb-3 form-control w-75 ms-5" type="email" placeholder="email" name="email" />
+            <input class="mb-3 form-control w-75 ms-5" type="password" placeholder="password" name="password" />
+            <input class="mb-3 form-control w-75 ms-5" type="text" placeholder="contact" name="contact" />
+            <button class="btn btn-success">Create Account</button>
+        </form>
+        <p>Already have an account ? <a href="/signin">Signin</a></p>
+    </div>
+
+    <%- include('./partials/footer')%>

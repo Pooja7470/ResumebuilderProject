@@ -1,0 +1,22 @@
+<%- include('./partials/header')%>
+    <div class="container">
+        <h3 class="fw-light fs-3  text-primary fw-bold bg-white p-2 w-50">
+           Login
+        </h3>
+        <form action="/signin" method="POST"class="sou pt-5" >
+            <input class="mb-3 form-control w-75  ms-5  " type="text" placeholder="username" name="username" />
+
+            <input class="mb-3 form-control w-75 ms-5 " type="text" placeholder="password" name="password" />
+            
+            <p class="d-flex w-75 justify-content-end ">
+                <a href="/forget-password">Forget Password ?</a>
+            </p>
+    
+    
+
+            <button class="btn btn-success">Create Account</button>
+        </form>
+        <p>Doesn't have an account ? <a href="/signup">Signup</a></p>
+    </div>
+
+    <%- include('./partials/footer')%>
